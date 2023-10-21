@@ -1,0 +1,23 @@
+Running migrations:
+(env) PS C:\Users\tavar\OneDrive\Desktop\PUCMM 2\Programacion PY\DjangoProject> python manage.py shell
+Python 3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from myApp.models import Project, Task
+>>> p= Project(name="Aplicacion Movi")
+>>> p
+<Project: Project object (None)>
+>>> p.save()
+>>> d=Project(name="IOS app")
+>>> d
+<Project: Project object (None)>
+>>> d.save()
+>>> Project.objects.all()
+<QuerySet [<Project: Project object (1)>, <Project: Project object (2)>]>
+>>> Project.objects.get(id=1)
+<Project: Project object (1)>
+>>> Project.objects.get(id=2)  
+<Project: Project object (2)>
+>>> Project.objects.get(name="IOS app")
+<Project: Project object (2)>
+>>>   
